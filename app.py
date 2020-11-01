@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import numpy as np
-import os
-
-os.chdir('C:/home/thomas/git/hackaton-2020/streamlit')
 
 # percentage to evi
 coefs = [44.0792625, 288.01533161] # 1d fit for percentage to evi

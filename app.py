@@ -14,7 +14,7 @@ gdf.perc_groen = gdf.perc_groen.astype(int)
 # titles and header
 st.title('Groen, groener, groenst!')
 st.subheader('Groen in de Breda')
-st.text('Het planten van bomen, vaste planten, bloembollen en andere vormen van groen heeft veel\nvoordelen zoals o.a. verbetering van het leefklimaat (temperatuur), een betere\nwaterhuishouding, ondersteuning van de biodiversiteit en verbetering van de \nluchtkwaliteit, en daarnaast ook positieve effecten heeft op gezondheid en welzijn, en \neen sociale ontmoetingsruimte creëert en ruimte voor beweging biedt.')
+st.markdown('Het planten van bomen, vaste planten, bloembollen en andere vormen van groen heeft veel\nvoordelen zoals o.a. verbetering van het leefklimaat (temperatuur), een betere\nwaterhuishouding, ondersteuning van de biodiversiteit en verbetering van de \nluchtkwaliteit, en daarnaast ook positieve effecten heeft op gezondheid en welzijn, en \neen sociale ontmoetingsruimte creëert en ruimte voor beweging biedt.')
 st.sidebar.title('Pas het groen in jouw buurt aan!')
 
 # buurt selector
@@ -50,6 +50,7 @@ choropleth.geojson.add_child(
 
 # call to render Folium map in Streamlit
 folium_static(m)
+st.markdown('\* huidig percentage groen per wijk op basis van Groenkaart RIVM (2017)')
 
 def hbar(df, xaxistitle, range_x, color):
     import plotly.express as px
@@ -60,7 +61,7 @@ def hbar(df, xaxistitle, range_x, color):
     return st.sidebar.plotly_chart(fig)
 
 
-st.sidebar.text('effect op temperatuur tov gemiddelde')
-hbar(temp, 'Temperatuur *C', range_x=[-2,2], color='darksalmon')
-st.sidebar.text('biodiversiteit op schaal \n1 (vrijwel geen) tot 5 (groot)')
-hbar(biod, 'Biodiversiteit', range_x=[1, 5], color='navy')
+st.sidebar.markdown('verschil in temperatuur [onderzoek](https://github.com/thomas-wsbd/streamlit-hackaton-2020/html/dashboard-export-temp.html)')
+hbar(temp, 'Temperatuur \u00b0C', range_x=[-2,2], color='darksalmon')
+st.sidebar.markdown('biodiversiteit op schaal [onderzoek](https://github.com/thomas-wsbd/streamlit-hackaton-2020/html/dashboard-export-obs.html)\n1 (vrijwel geen) tot 5 (groot)')
+hbar(biod, 'Biodiversiteit (1-5)', range_x=[1, 5], color='navy')

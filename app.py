@@ -61,7 +61,7 @@ def hbar(df, xaxistitle, range_x, color):
     return st.sidebar.plotly_chart(fig)
 
 
-st.sidebar.markdown('verschil in temperatuur [onderzoek](https://github.com/thomas-wsbd/streamlit-hackaton-2020/html/dashboard-export-temp.html)')
+st.sidebar.markdown('verschil in temperatuur [onderzoek](https://htmlpreview.github.io/?https://github.com/thomas-wsbd/streamlit-hackaton-2020/blob/master/html/dashboard-export-temp.html)')
 hbar(temp, 'Temperatuur \u00b0C', range_x=[-2,2], color='darksalmon')
-st.sidebar.markdown('biodiversiteit op schaal [onderzoek](https://github.com/thomas-wsbd/streamlit-hackaton-2020/html/dashboard-export-obs.html)\n1 (vrijwel geen) tot 5 (groot)')
+st.sidebar.markdown('biodiversiteit op schaal [onderzoek](https://htmlpreview.github.io/?https://github.com/thomas-wsbd/streamlit-hackaton-2020/blob/master/html/dashboard-export-obs.html)\n1 (vrijwel geen) tot 5 (groot)')
 hbar(biod, 'Biodiversiteit (1-5)', range_x=[1, 5], color='navy')
